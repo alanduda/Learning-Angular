@@ -1,20 +1,28 @@
+import { ContactsModule } from './pages/contacts/contacts.module';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsComponent } from './pages/forms/forms.component';
+import { Routes, RouterModule } from '@angular/router';
+
+const routes: Routes = [
+  { path: '**', redirectTo: 'contacts', pathMatch: 'full' },
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    RouterModule.forRoot(routes),
+
+    //Modules Pages
+    FormsModule,
+    ContactsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
