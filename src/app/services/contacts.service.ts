@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,11 @@ import { Injectable } from '@angular/core';
 })
 export class ContactsService {
 
-  constructor() { }
+  contactsUrl: string = 'http://localhost:8080/contatos';
+
+  constructor(private http: HttpClient) { }
+
+  getContacts() {
+    return this.http.get<any[]>(this.contactsUrl);
+  }
 }
