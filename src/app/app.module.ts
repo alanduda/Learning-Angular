@@ -1,3 +1,4 @@
+import { ContactsService } from './services/contacts.service';
 import { ContactsModule } from './pages/contacts/contacts.module';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -24,7 +25,7 @@ const routes: Routes = [
     FormsModule,
     ContactsModule
   ],
-  providers: [],
+  providers: [ContactsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
