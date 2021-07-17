@@ -1,5 +1,4 @@
 import { ContactsService } from './services/contacts.service';
-import { ContactsModule } from './pages/contacts/contacts.module';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -25,7 +24,6 @@ const routes: Routes = [
 
     //Modules Pages
     FormsModule,
-    ContactsModule,
   ],
   providers: [ContactsService],
   bootstrap: [AppComponent]
